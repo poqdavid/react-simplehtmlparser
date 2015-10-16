@@ -59,7 +59,7 @@ React.SHP = (function () {
 			}
 		}
 		else {
-			temp_attr = self.convAttrToObj(temp_html.attributes);
+			temp_attr = self.convertAttrToObj(temp_html.attributes);
 		}
 
 		if (dangerouslycreate) {
