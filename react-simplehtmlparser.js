@@ -28,7 +28,7 @@ React.SHP = (function () {
 		}
 	};
 
-	SHP.prototype.createElement = function (html, text, attr) {
+	SHP.prototype.createElement = function (html, text, attr, dangerouslycreate) {
 		var self = this;
 		var temp_html;
 		var temp_text;
@@ -62,13 +62,19 @@ React.SHP = (function () {
 			temp_attr = self.convAttrToObj(temp_html.attributes);
 		}
 
-		temp_attr['dangerouslySetInnerHTML'] = self.createMarkup(temp_text);
-		return React.createElement(temp_html.nodeName, temp_attr);
+		if (dangerouslycreate) {
+			temp_attr['dangerouslySetInnerHTML'] = self.createMarkup(temp_text);
+			return React.createElement(temp_html.nodeName, temp_attr);
+		}
+		else {
+			return React.createElement(temp_html.nodeName, temp_attr, temp_text);
+		}
+
 	};
 
-	SHP.prototype.render = function (html, text, attr, rendernode) {
+	SHP.prototype.render = function (html, text, attr, dangerouslycreate, rendernode) {
 		var self = this;
-		React.render(self.createElement(html, text, attr), rendernode);
+		React.render(self.createElement(html, text, attr, dangerouslycreate), rendernode);
 	};
 
 
