@@ -82,7 +82,6 @@ React.SHP = (function () {
 		React.render(self.createElement(html, text, attr, dangerouslycreate), rendernode);
 	};
 
-
 	return SHP;
 })();
 React.SHP = new React.SHP();
