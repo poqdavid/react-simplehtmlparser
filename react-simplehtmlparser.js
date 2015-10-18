@@ -1,7 +1,12 @@
+/*! @license React-SimpleHtmlParser - v1.0.0 - 2015-10-19
+ * https://github.com/poqdavid/react-simplehtmlparser/
+ *
+ * Copyright (c) 2015 poqdavid;
+ * Licensed under the MIT license */
+
 React.SHP = (function () {
 	var SHP = function () {
 		//var self = this;
-
 	};
 
 	SHP.prototype.createMarkup = function (ihtml) {
